@@ -5,12 +5,10 @@
 #include <fstream>
 #include <string>
 
-std::ifstream file;
-std::ofstream file1;
-
 // Белый
 // Открытие файла
-bool open_file(const std::string& path) {
+bool open_file(const char* path) {
+	std::ifstream file;
 	file.open(path);
 	if (file.is_open())
 	{
@@ -21,7 +19,9 @@ bool open_file(const std::string& path) {
 }
 
 // Закрытие файла
-bool close_file(const std::string& path) {
+bool close_file(const char* path) {
+	std::ifstream file;
+	std::ofstream file1;
 	if (file.is_open()) file.close();
 	if (file1.is_open()) file1.close();
 	if (!file.is_open() || !file1.is_open()) {
@@ -31,9 +31,10 @@ bool close_file(const std::string& path) {
 }
 
 // Чтение файла
-std::string read(const std::string& path) {
+const char* read(const char* path) {
+	std::ifstream file;
 	file.open(path);
-	if (file.is_open())
+	if (!file.is_open())
 	{
 		return "Error!";
 	}
@@ -42,13 +43,16 @@ std::string read(const std::string& path) {
 		content += line + "\n";
 	}
 	file.close();
-	return content;
+	const char* c = "lol";
+	const char* cont = content.c_str();
+	return c;
 }
 
 // Манько
 // Запись в файл
-bool write(const std::string& path, const std::string& info)
+bool write(const char* path, const char* info)
 {
+	std::ofstream file1;
 	file1.open(path);
 	if (!file1.is_open())
 	{
@@ -59,8 +63,9 @@ bool write(const std::string& path, const std::string& info)
 }
 
 // Поиск в файле
-bool find(const std::string& path, const std::string& thing)
+bool find(const char* path, const char* thing)
 {
+	std::ifstream file;
 	std::string text, str;
 	while (std::getline(file, str))
 	{
@@ -71,7 +76,7 @@ bool find(const std::string& path, const std::string& thing)
 }
 
 // Поиск в файле
-int count(const std::string& path, const char* thing)
+int count(const char* path, const char* thing)
 {
 	int count = 0;
 	return count;
@@ -79,7 +84,9 @@ int count(const std::string& path, const char* thing)
 
 // Васильев
 // экспрт 
-bool save(const std::string& path, const char* filename, const char* data) {
+bool save(const char* path, const char* filename, const char* data) {
+	std::ifstream file;
+	std::ofstream file1;
 	file1.open(filename);
 	file.open(path);
     if (!file1.is_open() || !file.is_open()) {

@@ -9,14 +9,14 @@
 #include <string>
 
 // Белый
-extern "C" DLLPROJECT_API bool open_file(const std::string& path);
-extern "C" DLLPROJECT_API bool close_file(const std::string& path);
-extern "C" DLLPROJECT_API std::string read(const std::string& path);
+extern "C" DLLPROJECT_API bool open_file(const char* path);
+extern "C" DLLPROJECT_API bool close_file(const char* path);
+extern "C" DLLPROJECT_API const char* read(const char* path);
 
 // Манько
-extern "C" DLLPROJECT_API void write(const std::string& path, std::string& info);
-extern "C" DLLPROJECT_API bool find(const std::string& path, std::string& thing);
-extern "C" DLLPROJECT_API int count(const std::string& path, std::string& thing);
+extern "C" DLLPROJECT_API bool write(const char* path, const char* info);
+extern "C" DLLPROJECT_API bool find(const char* path, const char* thing);
+extern "C" DLLPROJECT_API int count(const char* path, const char* thing);
 
 // Васильев
-extern "C" DLLPROJECT_API bool save(const std::string& path, const char* filename, const char* data);
+extern "C" DLLPROJECT_API bool save(const char* path, const char* filename, const char* data);
