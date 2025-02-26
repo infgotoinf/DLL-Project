@@ -6,8 +6,6 @@
 #define DLLPROJECT_API __declspec(dllimport)
 #endif
 
-#include <string>
-
 // Белый
 extern "C" DLLPROJECT_API bool open_file(const char* path);
 extern "C" DLLPROJECT_API bool close_file(const char* path);
