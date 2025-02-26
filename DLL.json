@@ -30,7 +30,7 @@
 		"iters": 1
 	},
     "save": {
-		"args": ["C:\\Users\\studentcoll\\Desktop\\UwU\\DLL Project\\Win32Tools-main\\UwU.txt", "C:\\Users\\studentcoll\\Desktop\\UwU\\DLL Project\\Win32Tools-main\\Mega OwO.txt", "UwU :3 <3"],
+		"args": ["C:\\Users\\studentcoll\\Desktop\\UwU\\DLL Project\\Win32Tools-main\\UwU.txt", "Mega OwO", "UwU :3 <3"],
         "restype": "_Bool",
 		"iters": 1
 	}

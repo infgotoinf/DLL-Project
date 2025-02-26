@@ -38,14 +38,14 @@ const char* read(const char* path) {
 	{
 		return "Error!";
 	}
-	std::string content, line;
+	std::string line;
+	char* content = new char[0] {};
 	while (std::getline(file, line)) {
-		content += line + "\n";
+		strcpy_s(content, strlen(content) + line.size(), line.c_str());
 	}
 	file.close();
-	const char* c = "lol";
-	const char* cont = content.c_str();
-	return c;
+
+	return content;
 }
 
 // Манько
@@ -66,20 +66,42 @@ bool write(const char* path, const char* info)
 bool find(const char* path, const char* thing)
 {
 	std::ifstream file;
-	std::string text, str;
-	while (std::getline(file, str))
-	{
-		text += str + '\n';
+	std::string line, text, thing_str;
+
+	file.open(path);
+	while (std::getline(file, line)) {
+		text += line + '\n';
 	}
+	file.close();
+	thing_str.assign(thing, strlen(thing));
 
 	return text.find(thing) != std::string::npos;
 }
 
-// Поиск в файле
+// Подсчёт совпадений в файле
 int count(const char* path, const char* thing)
 {
-	int count = 0;
-	return count;
+	std::ifstream file;
+	std::string line, text, thing_str;
+
+	file.open(path);
+	while (std::getline(file, line)) {
+		text += line + '\n';
+	}
+	file.close();
+	thing_str.assign(thing, strlen(thing));
+
+	if (text.find(thing) != std::string::npos)
+	{
+		int i = 1;
+		size_t found = text.find(thing);
+		for (; text.find(thing, found + 1) != std::string::npos; i++)
+		{
+			found = text.find(thing, found + 1);
+		}
+		return i;
+	}
+	return 0;
 }
 
 // Васильев
