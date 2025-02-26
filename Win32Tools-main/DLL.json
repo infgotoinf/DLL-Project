@@ -1,0 +1,37 @@
+{
+	"open_file": {
+		"args": ["C:\\Users\\studentcoll\\Desktop\\UwU\\Win32Tools\\Win32Tools-main\\UwU.txt"],
+        "restype": "_Bool",
+		"iters": 1
+	},
+    "close_file": {
+		"args": ["C:\\Users\\studentcoll\\Desktop\\UwU\\Win32Tools\\Win32Tools-main\\UwU.txt"],
+        "restype": "_Bool",
+		"iters": 1
+	},
+    "read": {
+		"args": ["C:\\Users\\studentcoll\\Desktop\\UwU\\Win32Tools\\Win32Tools-main\\UwU.txt"],
+        "restype": "char*",
+		"iters": 1
+	},
+    "write": {
+		"args": ["C:\\Users\\studentcoll\\Desktop\\UwU\\Win32Tools\\Win32Tools-main\\UwU.txt", "OwOOwOOwO?"],
+        "restype": "_Bool",
+		"iters": 1
+	},
+    "find": {
+		"args": ["C:\\Users\\studentcoll\\Desktop\\UwU\\Win32Tools\\Win32Tools-main\\UwU.txt", "OwO"],
+        "restype": "_Bool",
+		"iters": 1
+	},
+    "count": {
+		"args": ["C:\\Users\\studentcoll\\Desktop\\UwU\\Win32Tools\\Win32Tools-main\\UwU.txt", "OwO"],
+        "restype": "int",
+		"iters": 1
+	},
+    "save": {
+		"args": ["C:\\Users\\studentcoll\\Desktop\\UwU\\Win32Tools\\Win32Tools-main\\UwU.txt", "Mega OwO", "UwU :3 <3"],
+        "restype": "_Bool",
+		"iters": 1
+	}
+}
