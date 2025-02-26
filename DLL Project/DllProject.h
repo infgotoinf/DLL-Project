@@ -20,3 +20,5 @@ extern "C" DLLPROJECT_API int count(const char* path, const char* thing);
 
 // Васильев
 extern "C" DLLPROJECT_API bool save(const char* path, const char* filename, const char* data);
+extern "C" DLLPROJECT_API bool deleteFile(const char* path);
+extern "C" DLLPROJECT_API int b_size(const char* path);

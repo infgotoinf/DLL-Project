@@ -1,6 +1,5 @@
 #include "pch.h"
 #include <utility>
-#include <limits.h>
 #include "DllProject.h"
 #include <fstream>
 #include <string>
@@ -20,8 +19,8 @@ bool open_file(const char* path) {
 
 // Закрытие файла
 bool close_file(const char* path) {
-	std::ifstream file;
-	std::ofstream file1;
+	std::ifstream file(path);
+	std::ofstream file1(path);
 	if (file.is_open()) file.close();
 	if (file1.is_open()) file1.close();
 	if (!file.is_open() || !file1.is_open()) {
@@ -106,7 +105,8 @@ int count(const char* path, const char* thing)
 
 // Васильев
 // экспрт 
-bool save(const char* path, const char* filename, const char* data) {
+bool save(const char* path, const char* filename, const char* data)
+{
 	std::ifstream file;
 	std::ofstream file1;
 	file1.open(filename);
@@ -124,4 +124,20 @@ bool save(const char* path, const char* filename, const char* data) {
     file1 << text + data;
 
     return true;
+}
+
+// Удаление файла
+bool deleteFile(const char* path)
+{
+	return DeleteFileA(path);
+}
+
+// Размер в байтах
+int b_size(const char* path)
+{
+	std::ifstream file(path, std::ios::binary | std::ios::ate);
+	if (!file) {
+		return -1;
+	}
+	return file.tellg();
 }

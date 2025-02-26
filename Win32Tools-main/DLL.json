@@ -9,14 +9,14 @@
         "restype": "_Bool",
 		"iters": 1
 	},
-    "read": {
-		"args": ["..\\Win32Tools-main\\UwU.txt"],
-        "restype": "char*",
-		"iters": 1
-	},
     "write": {
 		"args": ["..\\Win32Tools-main\\UwU.txt", "OwOOwOOwO?"],
         "restype": "_Bool",
+		"iters": 1
+	},
+	"read": {
+		"args": ["..\\Win32Tools-main\\UwU.txt"],
+        "restype": "char*",
 		"iters": 1
 	},
     "find": {
@@ -32,6 +32,16 @@
     "save": {
 		"args": ["..\\Win32Tools-main\\UwU.txt", "..\\Win32Tools-main\\Mega OwO.txt", "UwU :3 <3"],
         "restype": "_Bool",
+		"iters": 1
+	},
+	"b_size": {
+		"args": ["..\\Win32Tools-main\\Mega OwO.txt"],
+        "restype": "int",
+		"iters": 1
+	},
+	"deleteFile": {
+		"args": ["..\\Win32Tools-main\\UwU.txt"],
+        "restype": "bool",
 		"iters": 1
 	}
 }
